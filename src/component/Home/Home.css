@@ -1,0 +1,28 @@
+/* Light Mode (Default) */
+body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  /* Dark Mode */
+  body.dark-theme {
+    background-color: #121212;
+    color: white;
+  }
+  
+  /* Container - Ensures Responsiveness */
+  .container {
+    display: flex;
+    justify-content: flex-end !important;/* Align items to the right */
+    flex-wrap: wrap; /* Allows elements to stack on smaller screens */
+    padding: 10px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container {
+      justify-content: center; /* Centers content on small screens */
+    }
+  }
+
