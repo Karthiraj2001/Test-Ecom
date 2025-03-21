@@ -1,75 +1,82 @@
-// import React from "react";
-// import { NavLink } from "react-router-dom";
-// import "./Header.css";
-
-// function Header() {
-//   return (
-//     <nav>
-//       <ul>
-//         <li>
-//           <NavLink to="/" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
-//             Home
-//           </NavLink>
-//         </li>
-//         <li>
-//           <NavLink to="/register" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
-//             Register
-//           </NavLink>
-//         </li>
-//         <li>
-//           <NavLink to="/login" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
-//             Login
-//           </NavLink>
-//         </li>
-//       </ul>
-//     </nav>
-//   );
-// }
-
-// export default Header;
-
-
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import React from "react";
 import "./Header.css";
-import { Link } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
+import { BsCart2 } from "react-icons/bs";
 
-  export const Header = () => {
+export const Header = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-   
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/register">Register </Nav.Link>
-            <Nav.Link as={Link} to="/login">Login </Nav.Link>
-            
-
-          </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <nav className="p-3 navbar navbar-expand-lg  fixed-top m-5 shadow-lg rounded-top rounded-5">
+      <div className="container-fluid">
+        <NavLink to="/" className="nav-link ">
+          E-commers
+        </NavLink>
+        <div
+          className="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
+              E-Commers
+            </h5>
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="offcanvas-body">
+            <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li className="nav-item">
+                <NavLink to="/allProduct" className="nav-link">
+                  All Product
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/about" className="nav-link">
+                  About Us
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/blog" className="nav-link">
+                  Blog
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/testimonials" className="nav-link">
+                  Testimonials
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/contact" className="nav-link">
+                  Contact Us
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <BsCart2 size={30} />
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
   );
-}
+};
 
 export default Header;

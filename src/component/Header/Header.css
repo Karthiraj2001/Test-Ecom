@@ -1,30 +1,20 @@
-nav {
-    background: #333;
-    padding: 5px;
-    
+.navbar-toggler{
+  border: none;
+  font-size: 1.25rem;
+}
 
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
   }
-  
-  ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
+  .navbar .nav-link {
+    color: #666777 !important;
+    font-weight: 500 !important;
   }
   
   .nav-link:hover {
-    color: yellow;
+    color: #9747FF !important;
   }
-  
-  .active {
-    font-weight: bold;
-    color: red;
+  .nav-link.active {
+    color: #9747FF !important; /* Customize the active link color */
   }
-  
